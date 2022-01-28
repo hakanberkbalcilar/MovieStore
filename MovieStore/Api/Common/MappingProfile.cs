@@ -1,6 +1,7 @@
 using AutoMapper;
 using MovieStore.Api.Application.ActorOperations.Commands.CreateActor;
 using MovieStore.Api.Application.DirectorOperations.Commands.CreateDirector;
+using MovieStore.Api.Application.GenreOperations.Commands.CreateGenre;
 using MovieStore.Api.Application.UserOperations.Commands.CreateUser;
 using MovieStore.Api.Entities;
 
@@ -17,5 +18,8 @@ public class MappingProfile : Profile{
         
         //Actor
         CreateMap<Actor, CreateActorModel>();
+
+        //Genre
+        CreateMap<Genre, CreateGenreModel>();
     }
 }
