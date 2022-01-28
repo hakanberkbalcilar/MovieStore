@@ -6,16 +6,14 @@ namespace MovieStore.Api.Application.DirectorOperations.Commands.UpdateDirector;
 public class UpdateDirectorCommand
 {
     private IMovieStoreDbContext _context;
-    private IMapper _mapper;
 
     public int Id { get; set; }
     public UpdateDirectorModel Model { get; set; } = null!;
 
 
-    public UpdateDirectorCommand(IMovieStoreDbContext context, IMapper mapper)
+    public UpdateDirectorCommand(IMovieStoreDbContext context)
     {
         _context = context;
-        _mapper = mapper;
     }
 
     public void Handle()

@@ -1,8 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MovieStore.Api.Entities;
 
 public class MovieActor
 {
-
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public int MovieId { get; set; }
     public int ActorId { get; set; }

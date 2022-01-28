@@ -38,7 +38,7 @@ public class GenreController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateGenre(int id, [FromBody] UpdateGenreModel updatedGenre)
     {
-        UpdateGenreCommand command = new UpdateGenreCommand(_context, _mapper);
+        UpdateGenreCommand command = new UpdateGenreCommand(_context);
         command.Id = id;
         command.Model = updatedGenre;
 
@@ -51,7 +51,8 @@ public class GenreController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeleteGenre(int id){
+    public IActionResult DeleteGenre(int id)
+    {
         DeleteGenreCommand command = new DeleteGenreCommand(_context);
         command.Id = id;
 

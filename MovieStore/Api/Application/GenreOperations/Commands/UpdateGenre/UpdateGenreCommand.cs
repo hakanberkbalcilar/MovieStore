@@ -6,15 +6,13 @@ namespace MovieStore.Api.Application.GenreOperations.Commands.UpdateGenre;
 public class UpdateGenreCommand
 {
     private IMovieStoreDbContext _context;
-    private IMapper _mapper;
 
     public int Id { get; set; }
     public UpdateGenreModel Model { get; set; } = null!;
 
-    public UpdateGenreCommand(IMovieStoreDbContext context, IMapper mapper)
+    public UpdateGenreCommand(IMovieStoreDbContext context)
     {
         _context = context;
-        _mapper = mapper;
     }
 
     public void Handle(){

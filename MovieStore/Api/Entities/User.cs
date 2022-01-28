@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MovieStore.Api.Entities;
 
 public class User
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;

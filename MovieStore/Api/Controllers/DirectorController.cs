@@ -39,7 +39,7 @@ public class DirectorController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateDirector(int id, [FromBody] UpdateDirectorModel updatedDirector)
     {
-        UpdateDirectorCommand command = new UpdateDirectorCommand(_context, _mapper);
+        UpdateDirectorCommand command = new UpdateDirectorCommand(_context);
         command.Id = id;
         command.Model = updatedDirector;
 

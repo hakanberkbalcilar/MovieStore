@@ -11,7 +11,8 @@ namespace MovieStore.Api.Controllers;
 
 [ApiController]
 [Route("[controller]s")]
-public class ActorController : ControllerBase{
+public class ActorController : ControllerBase
+{
     private IMovieStoreDbContext _context;
     private IMapper _mapper;
 
@@ -23,8 +24,9 @@ public class ActorController : ControllerBase{
 
 
     [HttpPost]
-    public IActionResult CreateActor([FromBody] CreateActorModel newActor){
-        CreateActorCommand command = new CreateActorCommand(_context,_mapper);
+    public IActionResult CreateActor([FromBody] CreateActorModel newActor)
+    {
+        CreateActorCommand command = new CreateActorCommand(_context, _mapper);
         command.Model = newActor;
 
         CreateActorCommandValidator validator = new CreateActorCommandValidator();
@@ -38,8 +40,9 @@ public class ActorController : ControllerBase{
 
 
     [HttpPut("{id}")]
-    public IActionResult UpdateActor(int id, [FromBody] UpdateActorModel updateActor){
-        UpdateActorCommand command = new UpdateActorCommand(_context,_mapper);
+    public IActionResult UpdateActor(int id, [FromBody] UpdateActorModel updateActor)
+    {
+        UpdateActorCommand command = new UpdateActorCommand(_context);
         command.Id = id;
         command.Model = updateActor;
 
@@ -52,7 +55,8 @@ public class ActorController : ControllerBase{
     }
 
     [HttpDelete]
-    public IActionResult DeleteActor(int id){
+    public IActionResult DeleteActor(int id)
+    {
         DeleteActorCommand command = new DeleteActorCommand(_context);
         command.Id = id;
 
