@@ -3,10 +3,10 @@ using MovieStore.Api.Entities;
 
 namespace MovieStore.Api.DbOperations;
 
-public class MoviewStoreDbContext : DbContext, IMovieStoreDbContext
+public class MovieStoreDbContext : DbContext, IMovieStoreDbContext
 {
 
-    public MoviewStoreDbContext(DbContextOptions<MoviewStoreDbContext> options) : base(options) { }
+    public MovieStoreDbContext(DbContextOptions<MovieStoreDbContext> options) : base(options) { }
 
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<Actor> Actors { get; set; } = null!;

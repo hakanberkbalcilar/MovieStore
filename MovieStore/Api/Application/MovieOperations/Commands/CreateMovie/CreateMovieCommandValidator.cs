@@ -10,5 +10,6 @@ public class CreateMovieCommandValidator : AbstractValidator<CreateMovieCommand>
         RuleFor(command => command.Model.GenreId).GreaterThan(0);
         RuleFor(command => command.Model.Price).GreaterThan(0);
         RuleFor(command => command.Model.Name).MinimumLength(0);
+        RuleFor(command => command.Model.ReleaseDate).NotEmpty();
     }
 }

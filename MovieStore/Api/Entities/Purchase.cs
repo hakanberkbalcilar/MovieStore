@@ -9,6 +9,8 @@ public class Purchase
     public int MovieId { get; set; }
     public int UserId { get; set; }
     public DateTime Date { get; set; }
+    public double Paid { get; set; }
+    public bool IsActive { get; set; } = true;
 
 
     public User User { get; set; } = null!;
