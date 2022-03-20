@@ -16,11 +16,16 @@ public class CreatePurchaseCommand
         _mapper = mapper;
     }
 
-    public void Handle(){
-        var purchase = _context.Purchases.FirstOrDefault(x=> x.UserId == Model.UserId && x.MovieId == Model.MovieId);
-        if( purchase is not null)
+    public void Handle()
+    {
+        var movie = _context.Movies.FirstOrDefault(x => x.Id == Model.MovieId);
+        if (movie is null)
+            throw new InvalidDataException("Movie is not found!");
+
+        var purchase = _context.Purchases.FirstOrDefault(x => x.UserId == Model.UserId && x.MovieId == Model.MovieId);
+        if (purchase is not null)
             throw new InvalidOperationException("Movie has already been bought!");
-        
+
         purchase = _mapper.Map<Purchase>(Model);
         _context.Purchases.Add(purchase);
         _context.SaveChanges();

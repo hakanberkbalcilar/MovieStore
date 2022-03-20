@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rOvoqKpu89z3YY0PQcg3hnm3nh4/zPEh0sFxhh6xHS0n03Z1R92cXGcCxIe1z7ljCFfAihq0BDyBeFH1ofBicw==",
+  "dgSpecHash": "4LsD6pQZUbtIO7aupYDA1dEewGOCLZ9BuvUqYWTb4hP+YLdCySHEk28qpXufpwq1wvXNJACFN7wpCRtdVIzTxQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\hakan\\source\\repos\\MovieStore\\MovieStore\\MovieStore.csproj",
+  "projectFilePath": "C:\\Users\\hakan\\source\\repos\\MovieStore\\MovieStore\\MovieStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hakan\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

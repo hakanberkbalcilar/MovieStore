@@ -4,6 +4,7 @@ using MovieStore.Api.Application.ActorOperations.Queries.GetActors;
 using MovieStore.Api.Application.DirectorOperations.Commands.CreateDirector;
 using MovieStore.Api.Application.GenreOperations.Commands.CreateGenre;
 using MovieStore.Api.Application.MovieOperations.Commands.CreateMovie;
+using MovieStore.Api.Application.MovieOperations.Queries.GetMovies;
 using MovieStore.Api.Application.PurchaseOperations.Commands.CreatePurchase;
 using MovieStore.Api.Application.UserOperations.Commands.CreateUser;
 using MovieStore.Api.Entities;
@@ -30,8 +31,9 @@ public class MappingProfile : Profile
 
         //Movie
         CreateMap<CreateMovieModel, Movie>();
+        CreateMap<Movie, GetMoviesViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name)).ForMember(dest => dest.Director, opt => opt.MapFrom(src => $"{src.Director.Name} {src.Director.Surname}"));
 
         //Purchase
-        CreateMap<CreatePurchaseModel, Genre>();
+        CreateMap<CreatePurchaseModel, Purchase>();
     }
 }

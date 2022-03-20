@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MovieStore.Api.Application.MovieOperations.Commands.CreateMovie;
 using MovieStore.Api.Application.MovieOperations.Commands.DeleteMovie;
 using MovieStore.Api.Application.MovieOperations.Commands.UpdateMovie;
+using MovieStore.Api.Application.MovieOperations.Queries.GetMovies;
 using MovieStore.Api.DbOperations;
 
 namespace MovieStore.Api.Controllers;
@@ -19,6 +20,14 @@ public class MovieController : ControllerBase
     {
         _context = context;
         _mapper = mapper;
+    }
+
+    [HttpGet]
+
+    public IActionResult GetMovies()
+    {
+        GetMoviesQuery query = new GetMoviesQuery(_context, _mapper);
+        return Ok(query.Handle());
     }
 
     [HttpPost]
